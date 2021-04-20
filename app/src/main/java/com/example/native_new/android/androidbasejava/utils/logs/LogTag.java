@@ -19,6 +19,20 @@ public class LogTag {
         Timber.tag(tag).i(sss, args);
     }
 
+    public static void e(String message, Object... args) {
+        String sss = getClassNameMethodNameAndLineNumber() + message;
+        Timber.tag("tagE").i(sss, args);
+    }
+
+    public static void e(Throwable throwable) {
+        Timber.e(throwable);
+    }
+
+    public static void w(String message, Object... args) {
+        String sss = getClassNameMethodNameAndLineNumber() + message;
+        Timber.tag("tagW").i(sss, args);
+    }
+
     /**
      * Get the current line number. Note, this will only work as called from
      * this class as it has to go a predetermined number of steps up the stack
